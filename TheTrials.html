@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="portfolio.css">
+
+    <script src=""></script>
+    <script src=""></script>
+
+    <title>Alex Wunderlin's Portfolio</title>
+    <link rel="icon" href="Icon.png" type="image/x-icon">
+</head>
+<body style="background-image: linear-gradient(to bottom right, #0050ff, #00ffda); background-attachment: fixed; margin: 0px; padding: 0px;">
+    <div class="row" style="height: 100%">
+        <div class="col" style="; background-color: rgba(25,25,50,0.9); width: 300px; margin-right: 5px; flex-shrink: 0">
+            <div style="position: fixed; padding: 20px;">
+                <object type="text/html" data="Menu.html" style="height: 100vh"></object>
+            </div>
+        </div>
+        <div class="col" style="min-height: 100vh">
+            <video loop autoplay muted src="theTrialsDemo.mp4" style="margin-top: 5px; padding: 0px; width: 100%;"></video>
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">The Trials</h1>
+                    <p class="text">
+                        The Trials is a puzzle platformer programmed entirely in Java. Like many platformers, the player
+                        controls a character with the goal of reaching the end of the level. To make the game
+                        interesting, each level is filled with numerous obstacles. Some of these obstacles can be
+                        overcome with timing and dexterity, while others require the player to navigate a maze of logic
+                        and use creative thinking to overcome them.
+                    </p>
+                    <h3 class="header">Inspiration</h3>
+                    <p class="text">
+                        This project was inspired by the original version of the game, initially created by me on
+                        Scratch. The goal was to recreate the game as a standalone piece of software. Throughout its
+                        redevelopment I took a lot of opportunities to improve many of the original features and
+                        implement new ones as they came to mind.
+                    </p>
+                    <h3 class="header"></h3>
+                    <p class="text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">How it Works</h1>
+                    <p class="text">
+                        The engine roughly follows the MVC design pattern. A majority of the work is done in the
+                        controller which is represented by a main driver assisted by a class to manage the menu and
+                        another to run the engine. The model consists of objects representing various game features such
+                        as the ground, lasers, and the player. The view is handled in a separate thread which
+                        continuously rerenders the game based off the latest contents of the model. The model is updated
+                        in a similar loop within the controller, each cycle updates the model based on user input and
+                        the model itself.
+                    </p>
+                    <h3 class="header">Detecting Player Collisions</h3>
+                    <p class="text">
+                        Each time the player moves, a method is called to check for collisions. If the player is
+                        colliding with the ground, the player's position is reverted to its previous state. If the player
+                        is colliding with a hazard, a method is called to resolve the player's death. The method for
+                        determining whether the player is colliding differs based on the objects type being checked. For
+                        the ground, spikes, and acid which all share the same polygon structure, checking if any of the
+                        player's corners are within that polygon suffices assuming nothing is more narrow than the
+                        player.
+                    </p>
+                </div>
+            </div>
+
+            <img src="CollisionDetection.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <p class="text">
+                        Lasers are a bit different as they are defined by a line, I found that checking to see if they
+                        intersect with the player to be the best way to check for collisions. To determine if
+                        the laser intersects with the player, I chose to use two lines that form an x across the player's
+                        hitbox. Any laser intersecting the player would have to intersect one of those lines. Note that
+                        this only accounts for lasers that fully intersect the player and was chosen because it's fail
+                        cases are outside the scope of the game and is more efficient than checking for intersects with all
+                        four of the player's edges.
+                    </p>
+                </div>
+            </div>
+
+            <img src="CollisionDetectionLaser.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; margin-bottom: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Tracking User Input</h3>
+                    <p class="text">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

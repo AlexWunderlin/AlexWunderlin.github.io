@@ -1,0 +1,64 @@
+.title {
+    font-family: monospace;
+    color: white;
+    font-size: 50px;
+}
+
+.header {
+    font-family: monospace;
+    color: white;
+    font-size: 25px;
+}
+
+.text {
+    font-family: monospace;
+    color: white;
+    font-size: 16px;
+}
+
+.fileLabel {
+    font-family: monospace;
+    font-size: 24px;
+    color: white;
+    padding: 0px;
+    margin: 3px;
+    margin-left: 5px;
+    line-height: 1;
+}
+
+a {
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fileIcon {
+    margin: 2px;
+    width: 26px;
+    height: 26px;
+    display: block;
+    line-height: 0px;
+}
+
+.hierarchicalImage {
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    line-height: 0px;
+}
+
+.hierarchicalBox {
+    margin: 0px;
+    padding: 0px;
+}
