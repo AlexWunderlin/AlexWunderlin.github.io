@@ -9,7 +9,7 @@ const maxRight = 2400;
 
 //Game Vars
 let x = 300;
-let y = 300;
+let y = -300;
 let ySpeed = 0;
 let xSpeed = 0;
 let playerSize = 400;
