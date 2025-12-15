@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="portfolio.css">
+
+    <script src=""></script>
+    <script src=""></script>
+
+    <title>Alex Wunderlin's Portfolio</title>
+    <link rel="icon" href="Icon.png" type="image/x-icon">
+</head>
+<body style="background-image: linear-gradient(to bottom right, #0050ff, #00ffda); background-attachment: fixed; margin: 0px; padding: 0px;">
+    <div class="row" style="height: 100%">
+        <div class="col" style="; background-color: rgba(25,25,50,0.9); width: 300px; margin-right: 5px; flex-shrink: 0">
+            <div style="position: fixed; padding: 20px;">
+                <object type="text/html" data="Menu.html" style="height: 100vh"></object>
+            </div>
+        </div>
+        <div class="col" style="min-height: 100vh">
+            <video loop autoplay muted src="3DEngineDemo.mp4" style="margin-top: 5px; padding: 0px; width: 100%;"></video>
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">3D Engine</h1>
+                    <p class="text">
+                        My 3D engine is a simple program on scratch that renders a list of 3D coordinates.
+                        The user controls the camera which they can move throughout environment and rotate to face
+                        different directions.
+                    </p>
+                    <h3 class="header">Inspiration</h3>
+                    <p class="text">
+                        Making a 3D game was something I had always wanted to do since I first started making video
+                        games. To make a 3D game, I first needed to learn how to display things in 3D, so I began
+                        development on a simple 3D program. It didn't need to be anything fancy, just a starting point I
+                        could later improve upon. It was important that the program I made was something I could
+                        call my own, hence I avoided tutorials and other resources.
+                    </p>
+                </div>
+            </div>
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">How it Works</h1>
+                    <p class="text">
+                        The basic idea comes down to how 3D points are converted to 2D points that can be displayed on a
+                        screen. Imagine two points, one to represent the camera and one to represent a point to be displayed.
+                        Now imagine a plane in front of the camera, perpendicular to the ray representing the direction
+                        the camera is facing. On that plane lies a coordinate grid with the origin being where it is
+                        intersected by the ray. By connecting the camera and the other point with a line, you can find
+                        the point's 2D location on the screen using the 2D coordinate of where that line intersects the
+                        plane. Note that in this example (0, 0) is located in the center of the screen. Obviously anything
+                        with a 2D coordinate outside the bounds of the screen would not be displayed. The distance of
+                        the plane from the camera and the scale of the coordinate grid can vary and affects the field of
+                        view and zoom.
+                    </p>
+                </div>
+            </div>
+
+            <img src="3DCode.png" style="margin-top: 5px; margin-bottom: 5px;  width: 100%;" alt="Code Snippet">
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+

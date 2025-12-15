@@ -86,14 +86,51 @@
 
             <img src="CollisionDetectionLaser.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
 
-            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; margin-bottom: 5px; height: 100%; width: 100%">
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
                 <div style="margin: 50px; padding: 0px">
                     <h3 class="header">Tracking User Input</h3>
                     <p class="text">
-
+                        The game loop needs to know the current user input state so it knows how to update the model with
+                        each iteration. A user input class stores the current user input and listens for changes in user
+                        input which it uses to update the current state. The controller can use a range of methods to
+                        check which keys are currently pressed, which keys have been tapped, where the mouse is located,
+                        and which mouse buttons are pressed.
                     </p>
                 </div>
             </div>
+
+            <img src="userInput.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Storing Levels</h3>
+                    <p class="text">
+                        Levels are stored in txt files. Aside from a few entries at the top of the file, each line
+                        represents an object. Each object is composed of one or more blocks of data enclosed in
+                        parentheses, within each block of data are values seperated by whitespace. This data is used to
+                        determine things like location, color, and behavior. Some components, particularly logic devices,
+                        also store data referencing other objects within the file. Below is a section of the level file
+                        used for the demo video above.
+                    </p>
+                </div>
+            </div>
+
+            <img src="LevelFile.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; margin-bottom: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Logic Gates</h3>
+                    <p class="text">
+                        The logic puzzles throughout the game wouldn't be possible without logic gates. Most logic gates
+                        have a list of inputs and outputs, whenever a logic gate changes state it signals all of its output
+                        devices, which update their state based on the new input forming a chain reaction. Because the input
+                        and output devices may not have been created yet, logic gates wait to connect themselves until
+                        connectLogic() is called after all logic devices have been initialized.
+                    </p>
+                </div>
+            </div>
+
+            <img src="LogicGate.png" style="margin-bottom: 5px;  width: 100%;" alt="Code Snippet">
         </div>
     </div>
 </body>
