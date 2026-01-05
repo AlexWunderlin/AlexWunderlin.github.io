@@ -111,7 +111,8 @@ const startAboutMeGame = async () => {
         userInput.mouseUp = false;
     }
 
-    while(!userInput.mouseDown) {
+    //while(!userInput.mouseDown) {
+    while(true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         render()
@@ -120,7 +121,7 @@ const startAboutMeGame = async () => {
         ctx.fillText("Hi,", 550, 250);
         ctx.font = "50px Monospace";
         ctx.fillText("I'm Alex Wunderlin", 550, 350);
-        ctx.fillText("[Click to start]", 555, 425);
+        //ctx.fillText("[Click to start]", 555, 425);
         await wait(50);
     }
     await playAboutMeGame()
