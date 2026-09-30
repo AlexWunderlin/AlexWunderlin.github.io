@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="portfolio.css">
+
+    <script src=""></script>
+    <script src=""></script>
+
+    <title>Alex Wunderlin's Portfolio</title>
+    <link rel="icon" href="Icon.png" type="image/x-icon">
+</head>
+<body style="background-image: linear-gradient(to bottom right, #0050ff, #00ffda); background-attachment: fixed; margin: 0px; padding: 0px;">
+    <div class="row" style="height: 100%">
+        <div class="col" style="; background-color: rgba(25,25,50,0.9); width: 300px; margin-right: 5px; flex-shrink: 0">
+            <div style="position: fixed; padding: 20px;">
+                <object type="text/html" data="Menu.html" style="height: 100vh"></object>
+            </div>
+        </div>
+        <div class="col" style="min-height: 100vh">
+            <video loop autoplay muted src="PlpDemo.mp4" style="margin-top: 5px; padding: 0px; width: 100%;"></video>
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">Progressive Learning Platform</h1>
+                    <p class="text">
+                        The Progressive Learning Platform, otherwise known as PLP, is an IDE for assembly languages that
+                        is built for students and beginners. The project is currently a work in progress that has been
+                        worked on by various student teams over the years. During my time on the project I fixed various
+                        bugs, worked on supporting double precision, and wrote the Instruction Visualizer module.
+                    </p>
+                </div>
+            </div>
+
+            <img src="InstructionVisualizerDemo.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h1 class="title">The Instruction Visualizer</h1>
+                    <p class="text">
+                        Writing the Instruction Visualizer was my largest contribution to the project. The goal of the
+                        Instruction Visualizer is to provide a visual explanation of how bits flow through the CPU when
+                        an instruction is executed. This 
+                    </p>
+                    <h3 class="header">Detecting Player Collisions</h3>
+                    <p class="text">
+                        Each time the player moves, a method is called to check for collisions. If the player is
+                        colliding with the ground, the player's position is reverted to its previous state. If the player
+                        is colliding with a hazard, a method is called to resolve the player's death. The method for
+                        determining whether the player is colliding differs based on the objects type being checked. For
+                        the ground, spikes, and acid which all share the same polygon structure, checking if any of the
+                        player's corners are within that polygon suffices assuming nothing is more narrow than the
+                        player.
+                    </p>
+                </div>
+            </div>
+
+            <img src="CollisionDetection.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <p class="text">
+                        Lasers are a bit different as they are defined by a line, I found that checking to see if they
+                        intersect with the player to be the best way to check for collisions. To determine if
+                        the laser intersects with the player, I chose to use two lines that form an x across the player's
+                        hitbox. Any laser intersecting the player would have to intersect one of those lines. Note that
+                        this only accounts for lasers that fully intersect the player and was chosen because it's fail
+                        cases are outside the scope of the game and is more efficient than checking for intersects with all
+                        four of the player's edges.
+                    </p>
+                </div>
+            </div>
+
+            <img src="CollisionDetectionLaser.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Tracking User Input</h3>
+                    <p class="text">
+                        The game loop needs to know the current user input state so it knows how to update the model with
+                        each iteration. A user input class stores the current user input and listens for changes in user
+                        input which it uses to update the current state. The controller can use a range of methods to
+                        check which keys are currently pressed, which keys have been tapped, where the mouse is located,
+                        and which mouse buttons are pressed.
+                    </p>
+                </div>
+            </div>
+
+            <img src="userInput.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Storing Levels</h3>
+                    <p class="text">
+                        Levels are stored in txt files. Aside from a few entries at the top of the file, each line
+                        represents an object. Each object is composed of one or more blocks of data enclosed in
+                        parentheses, within each block of data are values seperated by whitespace. This data is used to
+                        determine things like location, color, and behavior. Some components, particularly logic devices,
+                        also store data referencing other objects within the file. Below is a section of the level file
+                        used for the demo video above.
+                    </p>
+                </div>
+            </div>
+
+            <img src="LevelFile.png" style="margin-top: 5px;  width: 100%;" alt="Code Snippet">
+
+            <div style="background-color: rgba(34,34,51,0.9); margin-top: 5px; margin-bottom: 5px; height: 100%; width: 100%">
+                <div style="margin: 50px; padding: 0px">
+                    <h3 class="header">Logic Gates</h3>
+                    <p class="text">
+                        The logic puzzles throughout the game wouldn't be possible without logic gates. Most logic gates
+                        have a list of inputs and outputs, whenever a logic gate changes state it signals all of its output
+                        devices, which update their state based on the new input forming a chain reaction. Because the input
+                        and output devices may not have been created yet, logic gates wait to connect themselves until
+                        connectLogic() is called after all logic devices have been initialized.
+                    </p>
+                </div>
+            </div>
+
+            <img src="LogicGate.png" style="margin-bottom: 5px;  width: 100%;" alt="Code Snippet">
+        </div>
+    </div>
+</body>
+</html>
+
+
+
